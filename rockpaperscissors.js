@@ -1,28 +1,21 @@
+let playerSelection;
+let weapons=["rock","paper","scissors"];
+let round=0;
+let playerScore=0;
+let computerScore=0;
+const weaponbuttons=document.querySelectorAll('.weapon-button');
 function getComputerSelection(){
-    let choice=Math.floor(Math.random()*3)+1;
-    switch(choice){
-        case 1: return "Rock";
-        case 2: return "Paper";
-        case 3: return "Scissors";
-        default: throw new Error("Error: the computer couldn't choose correctly...");
-    }
+    let computerChoice=weapons[Math.floor(Math.random()*weapons.length)];
+    return computerChoice;
 };
-function getPlayerSelection(){
-    let playerSelection=prompt("Please, make your choice between 'Rock', 'Paper' and 'Scissors'");
-    let playerSelectionCaseInsensitive=playerSelection.toLowerCase();
-    if(playerSelectionCaseInsensitive!="rock" && playerSelectionCaseInsensitive!="paper" && playerSelectionCaseInsensitive!="scissors"){
-        throw new Error("Unable to recognize your choice.");
-    }
-    return playerSelectionCaseInsensitive;
-}
 function playRound(playerSelection, computerSelection){
     let whoWon;
     switch(playerSelection){
-        case "rock": if(computerSelection==="Rock"){
+        case "rock": if(computerSelection==="rock"){
                          console.log("It's a draw. You both selected Rock.");
                          return whoWon="draw";
                      }
-                     else if(computerSelection==="Paper"){
+                     else if(computerSelection==="paper"){
                         console.log("You Lose! Paper beats Rock!");
                         return whoWon="computer";
                      }
@@ -31,11 +24,11 @@ function playRound(playerSelection, computerSelection){
                         return whoWon="player";
                      }
                      break;
-        case "paper": if(computerSelection==="Paper"){
+        case "paper": if(computerSelection==="paper"){
                         console.log("It's a draw. You both selected Paper.");
                         return whoWon="draw";
                       }
-                      else if(computerSelection==="Scissors"){
+                      else if(computerSelection==="scissors"){
                         console.log("You Lose! Scissors beats Paper!");
                         return whoWon="computer";
                      }
@@ -44,11 +37,11 @@ function playRound(playerSelection, computerSelection){
                         return whoWon="player";
                      }
                      break;
-        case "scissors": if(computerSelection==="Scissors"){
+        case "scissors": if(computerSelection==="scissors"){
                         console.log("It's a draw. You both selected Scissors.");
                         return whoWon="draw";
                       }
-                      else if(computerSelection==="Rock"){
+                      else if(computerSelection==="rock"){
                         console.log("You Lose! Rock beats Scissors!");
                         return whoWon="computer";
                      }
@@ -60,25 +53,44 @@ function playRound(playerSelection, computerSelection){
         default: throw new Error("Failed to determinate the winner. I'm sorry.");
     }
 }
-function game(){
-    let whoWon;
-    let playerWins=0;
-    let computerWins=0;
-    let draws=0;
-    for(let i=0;i<5;i++) {
-        whoWon=playRound(getPlayerSelection(),getComputerSelection());
-        switch(whoWon){
-            case "draw": draws++; break;
-            case "player": playerWins++; break;
-            case "computer": computerWins++; break;
-            default: throw new Error("Unable to determinate result!");
-        }
-    }
-    console.log("Player won "+playerWins+" matches.");
-        console.log("Computer won "+computerWins+" matches");
-        console.log("There were "+draws+" draws");
-        if(playerWins>computerWins) console.log("Player wins the game.");
-        else if(computerWins>playerWins) console.log("Computer wins the game.");
-        else console.log("The game end in tie.");
+function isGameOver(){
+    return (playerScore===5 || computerScore===5);
 }
-game();
+function restartGame(){
+    if(playerScore>computerScore) alert("You won!");
+    else alert("You lost...");
+    console.log("Restarting game...");
+    playerScore=0;
+    computerScore=0;
+    round=0;
+}
+function playGame(){
+    let whoWon;
+    weaponbuttons.forEach(weapon => {
+        weapon.addEventListener('click', () =>{
+            if(weapon.classList.contains('rock-button')) {
+                playerSelection="rock";
+               // whoWon=playRound(playerSelection.toLowerCase(), getComputerSelection());
+
+            }
+            else if(weapon.classList.contains('paper-button')) {
+                playerSelection="paper";
+              //  playRound(playerSelection.toLowerCase(), getComputerSelection());
+            }
+            else if(weapon.classList.contains('scissors-button')) {
+                playerSelection="scissors";
+               // playRound(playerSelection.toLowerCase(), getComputerSelection());
+            }
+            else throw new Error("Unable to pick player choice.");
+            whoWon=playRound(playerSelection.toLowerCase(), getComputerSelection());
+            if(whoWon==="player") playerScore++;
+            else if(whoWon==="computer") computerScore++;
+            round++;
+            if(isGameOver()){
+                restartGame();
+            };
+            
+        });
+    });
+}
+playGame();
