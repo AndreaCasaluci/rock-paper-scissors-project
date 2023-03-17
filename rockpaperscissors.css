@@ -1,0 +1,196 @@
+body{
+    margin:0px;
+    padding:0px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+}
+.header{
+    align-items: center;
+    text-align: center;
+    padding:1%;
+    font-size: 60px;
+    font-weight:bold;
+    background-color: #000000ff;
+    color: #7957A8;
+    background-image: url("headerbackground.svg");
+    border-bottom: 5px solid;
+    border-color: #7957A8;
+    display: flex;
+   /* justify-content: space-between;
+   /* align-items: center;*/
+}
+.header div{
+    flex:1;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 33%;
+}
+div .logo{
+    align-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    text-align: left;
+}
+#choicebox{
+    color:white;
+    margin:auto;
+    margin-top: 3%;
+    width: fit-content;
+    padding: 2%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    display:flex;
+    /*border: 3px solid #7957A8;
+    border-radius: 3px;*/
+}
+.verticalDiv{
+    color:white;
+    display: flex;
+    flex-direction: column;
+}
+.imageDesc{
+    padding-top:3px;
+}
+#choicebox button{
+    background-color: transparent;
+    flex-direction: row;
+    color:white;
+    font-weight: bold;
+    font-size: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    border: 2px solid #7957A8;
+    border-radius: 10px;
+    background-color: #7957A8;
+    height: 150px;
+    width: 150px;
+    aspect-ratio: 1/1;
+}
+#choicebox button:hover{
+    cursor: pointer;
+  /*  -webkit-transform: scale(1.3);
+    transform: scale(1.1);
+    transition: all .3s;*/
+    font-size: 110px;
+    background-color: #9d73d8;
+    border-color: #9d73d8;
+    transition: all .3s;
+}
+.roundInformations{
+    color:white;
+    display: flex;
+    font-size: 40px;
+    text-align:center;
+    justify-content: center;
+    margin-top:5%;
+}
+.winner-info{
+ /*   flex:1;
+    flex-direction: column;
+    display:flex;*/
+    border: 3px solid red;
+}
+.playerScore-info{
+/*    flex:1;
+    flex-direction: column;
+    display:flex; */
+    border: 3px solid red;
+}
+.computerScore-info{
+    border:3px solid red;
+}
+.roundWinner{
+   /* flex:1;
+    flex-direction: row;*/
+    margin-top: 3%;
+    color:white;
+    font-size: 40px;
+    text-align:center;
+    padding-left:5px;
+}
+.chooseText{
+    text-align: center;
+    align-items: center;
+    color:white;
+    font-size: 45px;
+    font-weight: bold;
+    margin-top:20px;
+    height: 50px;
+    max-height: 50px;
+}
+.gameInfo{
+    text-align: center;
+    align-items: center;
+    color:white;
+    font-size: 25px;
+    margin-top:10px;
+}
+
+#choiceAndPoints{
+
+    margin-top:35px;
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    max-height: 150px;
+}
+.lastPlayerChoice{
+    margin-right:2%;
+}
+.lastComputerChoice{
+    margin-left:2%;
+}
+.lastChoice{
+    display:flex;
+    flex-direction: column;
+}
+.lastChoice-image{
+    font-size: 100px;
+}
+#playerSign{
+    background-color: transparent;
+}
+#computerSign{
+    background-color: transparent;
+}
+#playerPoints{
+
+}
+#computerPoints{
+
+}
+#whoWon{
+
+}
+#explanation{
+
+}
+.infoContainer{
+    flex:1;
+}
+.infoLine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height:150px;
+    max-height: 150px;
+}
+#roundCounter{
+    color:white;
+    flex:1;
+    padding-left: 3%;
+    font-size: 20px;
+    align-self: flex-end;
+    max-width: fit-content;
+    padding-right: 20%;
+}

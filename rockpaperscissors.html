@@ -4,11 +4,48 @@
     <meta charset="UTF-8" />
     <title>Rock Paper Scissor</title>
     <script src="rockpaperscissors.js" defer></script>
-    <style src="rockpaperscissors.css"></style>
+    <link rel="stylesheet" type="text/css" href="rockpaperscissors.css">
+    <link rel="icon" href="rock-paper-scissors-icon.png">
 </head>
-<body>
-        <button class="rock-button weapon-button">Rock</button>
-        <button class="paper-button weapon-button">Paper</button>
-        <button class="scissors-button weapon-button">Scissors</button>
+<!--<body background="nnnoise.svg">-->
+    <body>
+    <div class="header">
+        <div>Rock Paper Scissors</div> 
+    </div>
+    <div class="infoLine">
+        <div></div>
+        <div class="infoContainer">
+             <div class="chooseText" id="whoWon">Choose your weapon!</div>
+             <div class="gameInfo" id="explanation">First one to score 5 points wins the game. Good Luck!</div>
+        </div>
+        <div id="roundCounter">Round: 0</div>
+    </div>
+    
+    
+    <div id="choiceAndPoints">
+        <div class="lastPlayerChoice">
+            <div class="lastChoice-image" id="playerSign">?</div>
+            <div class="lastChoice-points" id="playerPoints">Player: 0</div>
+        </div>
+        <div class="lastComputerChoice">
+            <div class="lastChoice-image" id="computerSign">?</div>
+            <div class="lastChoice-points" id="computerPoints">Computer: 0</div>
+        </div>
+    </div>
+    <div id="choicebox">
+            <div class="vertcalDiv">
+                <button id="rock-button" class="weapon-button">✊</button>
+                <div class="imageDesc">Rock</div>
+            </div>
+            <div class="verticalDiv">
+                <button id="paper-button" class=" weapon-button">🖐</button>
+                <div class="imageDesc">Paper</div>
+            </div>
+            <div class="vertcalDiv">
+                <button id="scissors-button" class=" weapon-button">✌️</button>
+                <div class="imageDesc">Scissors</div>
+            </div>
+            
+    </div>
 </body>
 </html>
