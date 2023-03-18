@@ -64,9 +64,10 @@ div .logo{
     border: 2px solid #7957A8;
     border-radius: 10px;
     background-color: #7957A8;
-    height: 150px;
-    /*width: 150px;*/
     aspect-ratio: 1/1;
+   /* height: 150px;*/
+    width: 150px;
+    
 }
 #choicebox button:hover{
     cursor: pointer;
