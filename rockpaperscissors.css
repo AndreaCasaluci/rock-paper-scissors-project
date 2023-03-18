@@ -196,3 +196,21 @@ div .logo{
     max-width: fit-content;
     padding-right: 20%;
 }
+
+#footer{
+    position:fixed;
+    background-color: black;
+    color:beige;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    left:0;
+    bottom: 0;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+#footer a{
+    text-decoration: none;
+    color:#9d73d8;
+}
