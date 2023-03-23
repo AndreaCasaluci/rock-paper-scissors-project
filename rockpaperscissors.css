@@ -221,3 +221,13 @@ div .logo{
     text-decoration: none;
     color:#9d73d8;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+    #choicebox button  {
+      width: 100px;
+      height: 100px;
+      font-size: 50px;
+    }
+  }
