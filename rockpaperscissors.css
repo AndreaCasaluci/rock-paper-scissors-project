@@ -232,7 +232,7 @@ div .logo{
       text-align: center;
     }
     .header{
-        font-size: 50px;
+        font-size: 45px;
     }
     #footer{
         font-size: 15px;
@@ -252,8 +252,10 @@ div .logo{
         transition: all .3s; */
         width: 100px;
         height: 100px;
-        font-size: 38px;
+        font-size: 35px;
         padding-right: 25%;
+        text-align: center;
+        align-items: center;
         background-color: #9d73d8;
         border-color: #9d73d8;
         transition: all .3s;
